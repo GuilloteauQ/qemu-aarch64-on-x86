@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/25.05";
   };
 
-  nixConfig.bash-prompt = "(\\u@\\h) \\w [dev]\$ ";
+  nixConfig.bash-prompt = "(\\u@\\h) \\w [qemu-aarch64]\$ ";
 
   outputs = { self, nixpkgs }:
     let
@@ -16,6 +16,7 @@
           packages = with pkgs; [
             guestfs-tools
             qemu_full
+            wget
           ];
         };
       };
